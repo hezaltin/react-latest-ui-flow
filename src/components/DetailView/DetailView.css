@@ -1,0 +1,58 @@
+.reports{
+    
+    margin-bottom: 10px;
+}
+.detail-list-container h4{
+    margin-top:40px
+} 
+
+.detail-request{
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    padding-left: 20px;
+    padding-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    padding-top: 10px;
+    height: 90px;
+    width: 400px;
+    font-size: 140%;
+}
+
+.detail-request span {
+    margin-bottom: 10px;
+}
+
+.detail-request div{
+    margin-bottom: 10px;
+}
+
+.detail-page{
+    display: flex;
+}
+
+.key-facts-container{
+    width: 48%;
+    display: flex;
+    justify-content: flex-end;
+    padding: 20px;
+}
+
+.rendered-table{
+    font-size: 140%;
+}
+
+.key-facts-list{
+    padding: 0 20px 20px 20px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
+
+.key-facts-list h3{
+    color: red;
+}
+
+.ml-result-metadata h1 {
+    font-size: 140%;
+    font-weight: 700;
+}
