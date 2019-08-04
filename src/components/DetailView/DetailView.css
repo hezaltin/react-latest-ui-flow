@@ -16,7 +16,10 @@
     padding-top: 10px;
     height: 90px;
     width: 400px;
+    /* For React Material */
     font-size: 140%;
+    /* For Bootstrap */
+    /* font-size: 100%; */
 }
 
 .detail-request span {
@@ -39,7 +42,10 @@
 }
 
 .rendered-table{
+   /* For React Material */
     font-size: 140%;
+    /* For Bootstrap */
+    /* font-size: 100%; */
 }
 
 .key-facts-list{
@@ -55,4 +61,8 @@
 .ml-result-metadata h1 {
     font-size: 140%;
     font-weight: 700;
+}
+/* for bootStrap */
+.detail-tabs{
+    width:50%
 }
