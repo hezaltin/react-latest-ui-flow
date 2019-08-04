@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+// import { Row, Col, Button, Glyphicon, Table, Tabs, Tab } from 'react-bootstrap' //for bootstrap
 import { Row, Col, Button, Glyphicon, Table } from 'react-bootstrap'
 import throttle from "lodash.throttle"
 import ReadMoreReact from 'read-more-react'
@@ -20,13 +21,13 @@ const styles = theme => ({
   root: {
     flexGrow: 1,
     backgroundColor: theme.palette.background.paper,
-    width:50
+    width: 50
   },
 });
 
 
 const SummarryContentPanel = (props) => {
-  const { data, value, clickHandler, profile,requestDoc,requestPending,id, ...other } = props;
+  const { data, value, clickHandler, profile, requestDoc, requestPending, id, ...other } = props;
   console.log('SummarryContentPanel==>', props.value)
   return (
     <div>
@@ -98,7 +99,7 @@ const PublicationContentPanel = (props) => {
 
 
 const KeyFactsList = (props) => {
-  const { instance, value, profile,requestDoc,requestPending,id, ...other } = props;
+  const { instance, value, profile, requestDoc, requestPending, id, ...other } = props;
   return (
     <div className="key-facts-list">
       <h3>Key Facts</h3>
@@ -199,8 +200,16 @@ class DetailView extends React.Component {
     console.log('uri==>', uri)
     this.setState({ selectorUri: uri })
   }
+// FOR BOOTSTRAP
+  // handleChange = (value, event) => {
+  //   console.log(event)
+  //   console.log(value)
+  //   this.setState({ value });
+  // };
 
-  handleChange = (event, value) => {
+handleChange = ( event, value) => {
+    console.log(event)
+    console.log(value)
     this.setState({ value });
   };
 
@@ -222,7 +231,24 @@ class DetailView extends React.Component {
           {instance.model}
         </h1>
         <div className="detail-page">
-        <div className={classes.root}>
+          {/* <div className="detail-tabs">
+            <Tabs defaultActiveKey={0} animation={false} onSelect={this.handleChange} id="noanim-tab-example">
+              {<Tab eventKey={0} title="Summarray">
+                <SummarryContentPanel value={value} data={instance} profile={profile} requestDoc={requestDoc} requestPending={requestPending} id={this.id} ></SummarryContentPanel>
+              </Tab>}
+              {<Tab eventKey={1} title="Raw Data">
+                <RawDataContentPanel value={value} data={instance.raw_data} clickHandler={this.itemClick}></RawDataContentPanel>
+              </Tab>}
+              {<Tab eventKey={2} title="Literature" >
+                <LiteratureContentPanel value={value} data={instance.attachments} clickHandler={this.itemClick}></LiteratureContentPanel>
+              </Tab>}
+              {<Tab eventKey={3} title="Publication" >
+                <PublicationContentPanel value={value} data={instance.results}></PublicationContentPanel>
+              </Tab>}
+            </Tabs>
+          </div> */}
+
+          <div className={classes.root}>
           <Paper position="static">
             <Tabs indicatorColor="secondary" textColor="secondary" value={value} onChange={this.handleChange}>
               <Tab label="Summarray" />
@@ -241,11 +267,11 @@ class DetailView extends React.Component {
           {value === 2 && <TabViewDetail> <LiteratureContentPanel value={value} data={instance.attachments} clickHandler={this.itemClick}></LiteratureContentPanel></TabViewDetail>}
           {value === 3 && <TabViewDetail> <PublicationContentPanel value={value} data={instance.results}></PublicationContentPanel></TabViewDetail>}
         </div>
-        <div className="key-facts-container">
-          {value === 0 && <KeyFactsList instance={instance} profile={profile} requestDoc={requestDoc} requestPending={requestPending} id={this.id} ></KeyFactsList>}
+          <div className="key-facts-container">
+            {value === 0 && <KeyFactsList instance={instance} profile={profile} requestDoc={requestDoc} requestPending={requestPending} id={this.id} ></KeyFactsList>}
+          </div>
         </div>
-        </div>
-        
+
       </Col>
 
     );
